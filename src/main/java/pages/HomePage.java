@@ -10,6 +10,11 @@ public class HomePage {
         this.driver = driver;
     }
 
+    public HoversPage clickHoversPage(){
+        clickLink("Hovers");
+        return new HoversPage(driver);
+    }
+
     public LoginPage clickFormAuthentication(){
         clickLink("Form Authentication");
         return new LoginPage(driver);
