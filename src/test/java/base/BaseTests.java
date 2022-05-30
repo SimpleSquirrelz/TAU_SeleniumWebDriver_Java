@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
 
 public class BaseTests {
@@ -19,9 +20,14 @@ public class BaseTests {
     public void setUp() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get(BASE_URL);
+        goHome();
         driver.manage().window().maximize();
         homePage = new HomePage(driver);
+    }
+
+    @BeforeMethod
+    public void goHome(){
+        driver.get(BASE_URL);
     }
 
     @AfterClass

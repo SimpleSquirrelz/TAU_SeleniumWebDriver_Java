@@ -10,6 +10,31 @@ public class HomePage {
         this.driver = driver;
     }
 
+    public ContextMenuPage clickContextMenuPage(){
+        clickLink("Context Menu");
+        return new ContextMenuPage(driver);
+    }
+
+    public FileUploadPage clickFileUploadPage(){
+        clickLink("File Upload");
+        return new FileUploadPage(driver);
+    }
+
+    public AlertsPage clickJavaScriptAlertsPage(){
+        clickLink("JavaScript Alerts");
+        return new AlertsPage(driver);
+    }
+
+    public HorizontalSliderPage clickHorizontalSliderPage(){
+        clickLink("Horizontal Slider");
+        return new HorizontalSliderPage(driver);
+    }
+
+    public KeyPressesPage clickKeyPressPage(){
+        clickLink("Key Presses");
+        return new KeyPressesPage(driver);
+    }
+
     public HoversPage clickHoversPage(){
         clickLink("Hovers");
         return new HoversPage(driver);
