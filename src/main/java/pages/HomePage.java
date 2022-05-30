@@ -10,6 +10,11 @@ public class HomePage {
         this.driver = driver;
     }
 
+    public WysiwygEditorPage clickWysiwygEditorPage(){
+        clickLink("WYSIWYG Editor");
+        return new WysiwygEditorPage(driver);
+    }
+
     public ContextMenuPage clickContextMenuPage(){
         clickLink("Context Menu");
         return new ContextMenuPage(driver);
