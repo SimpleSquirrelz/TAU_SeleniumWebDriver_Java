@@ -6,9 +6,9 @@ import org.openqa.selenium.WebDriver;
 
 public class HorizontalSliderPage {
 
-    private WebDriver driver;
-    private By slider = By.cssSelector(".sliderContainer input");
-    private By valueField =  By.cssSelector(".sliderContainer span");
+    private final WebDriver driver;
+    private final By slider = By.cssSelector(".sliderContainer input");
+    private final By valueField =  By.cssSelector(".sliderContainer span");
 
     public HorizontalSliderPage(WebDriver driver){
         this.driver = driver;

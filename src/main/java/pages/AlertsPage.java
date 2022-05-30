@@ -5,13 +5,13 @@ import org.openqa.selenium.WebDriver;
 
 public class AlertsPage {
 
-    private WebDriver driver;
-    private By triggerAlertButton = By.xpath("//button[.='Click for JS Alert']");
-    private By triggerConfirmButton = By.xpath("//button[.='Click for JS Confirm']");
-    private By triggerPromptButton = By.xpath("//button[.='Click for JS Prompt']");
+    private final WebDriver driver;
 
-    private By result = By.id("result");
+    private final By triggerAlertButton = By.xpath("//button[.='Click for JS Alert']");
+    private final By triggerConfirmButton = By.xpath("//button[.='Click for JS Confirm']");
+    private final By triggerPromptButton = By.xpath("//button[.='Click for JS Prompt']");
 
+    private final By result = By.id("result");
 
     public AlertsPage(WebDriver driver){
         this.driver = driver;

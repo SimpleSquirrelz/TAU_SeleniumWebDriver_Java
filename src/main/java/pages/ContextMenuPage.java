@@ -7,8 +7,8 @@ import org.openqa.selenium.interactions.Actions;
 
 public class ContextMenuPage {
 
-    private WebDriver driver;
-    private By hotspot = By.id("hot-spot");
+    private final WebDriver driver;
+    private final By hotspot = By.id("hot-spot");
 
     public ContextMenuPage(WebDriver driver){
         this.driver = driver;

@@ -6,10 +6,10 @@ import org.openqa.selenium.WebElement;
 
 public class NestedFramesPage {
 
-    private WebDriver driver;
-    private By bottomFrame = By.name("frame-bottom");
-    private By topFrame = By.name("frame-top");
-    private By leftFrame = By.name("frame-left");
+    private final WebDriver driver;
+    private final By bottomFrame = By.name("frame-bottom");
+    private final By topFrame = By.name("frame-top");
+    private final By leftFrame = By.name("frame-left");
 
     public void switchToBottomFrame(){
         driver.switchTo().frame(driver.findElement(bottomFrame));
