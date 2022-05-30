@@ -10,6 +10,11 @@ public class HomePage {
         this.driver = driver;
     }
 
+    public NestedFramesPage clickNestedFramesPage(){
+        clickLink("Nested Frames");
+        return new NestedFramesPage(driver);
+    }
+
     public WysiwygEditorPage clickWysiwygEditorPage(){
         clickLink("WYSIWYG Editor");
         return new WysiwygEditorPage(driver);
