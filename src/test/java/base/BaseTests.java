@@ -3,6 +3,7 @@ package base;
 import com.google.common.io.Files;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -24,8 +25,9 @@ public class BaseTests {
     @BeforeClass
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(getChromeOptions());
         goHome();
+        setCookie();
         driver.manage().window().maximize();
         homePage = new HomePage(driver);
     }
@@ -56,5 +58,20 @@ public class BaseTests {
 
     public WindowManager getWindowManager(){
         return new WindowManager(driver);
+    }
+
+    private ChromeOptions getChromeOptions(){
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("disable-infobars");
+        //options.setHeadless(true);
+        return options;
+    }
+
+    private void setCookie(){
+        Cookie cookie = new Cookie.Builder("tau", "123").
+                domain("the-internet.herokuapp.com").
+                build();
+
+        driver.manage().addCookie(cookie);
     }
 }
