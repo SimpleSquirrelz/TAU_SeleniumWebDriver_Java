@@ -10,6 +10,16 @@ public class HomePage {
         this.driver = driver;
     }
 
+    public InfiniteScrollPage clickInfiniteScrollPage(){
+        clickLink("Infinite Scroll");
+        return new InfiniteScrollPage(driver);
+    }
+    
+    public LargeAndDeepDomPage clickLargeAndDeepDomPage(){
+        clickLink("Large & Deep DOM");
+        return new LargeAndDeepDomPage(driver);
+    }
+
     public DynamicLoadingPage clickDynamicLoadingPage(){
         clickLink("Dynamic Loading");
         return new DynamicLoadingPage(driver);
