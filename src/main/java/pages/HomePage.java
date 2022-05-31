@@ -4,10 +4,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage {
+
     private final WebDriver driver;
 
     public HomePage(WebDriver driver){
         this.driver = driver;
+    }
+
+    public MultipleWindowsPage clickMultipleWindowsPage(){
+        clickLink("Multiple Windows");
+        return new MultipleWindowsPage(driver);
     }
 
     public InfiniteScrollPage clickInfiniteScrollPage(){

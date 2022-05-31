@@ -12,13 +12,13 @@ import utils.WindowManager;
 
 public class BaseTests {
 
-    private String BASE_URL = "https://the-internet.herokuapp.com/";
+    private final String BASE_URL = "https://the-internet.herokuapp.com/";
 
     private WebDriver driver;
     protected HomePage homePage;
 
     @BeforeClass
-    public void setUp() throws InterruptedException {
+    public void setUp() {
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         driver = new ChromeDriver();
         goHome();
